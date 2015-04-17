@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'home/aboutDevelopers'
+
+  get 'home/contact'
+
+  get 'home/portfolio'
+
+  get 'home/aboutRuby'
+
+  get 'home/aboutMe'
+
+  get 'users/new'
+
+  get 'users/new'
+
   resources :categories
   resources :statuses
   resources :book_types
