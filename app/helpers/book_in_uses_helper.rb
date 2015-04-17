@@ -1,0 +1,2 @@
+module BookInUsesHelper
+end

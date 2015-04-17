@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Barcode:</strong>
+  <%= @book.barcode %>
+</p>
+
+<p>
+  <strong>Inncode:</strong>
+  <%= @book.INNcode %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@book_in_use) do |f| %>
+  <% if @book_in_use.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book_in_use.errors.count, "error") %> prohibited this book_in_use from being saved:</h2>
+
+      <ul>
+      <% @book_in_use.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fromDate %><br>
+    <%= f.date_select :fromDate %>
+  </div>
+  <div class="field">
+    <%= f.label :toDate %><br>
+    <%= f.date_select :toDate %>
+  </div>
+  <div class="field">
+    <%= f.label :returnDate %><br>
+    <%= f.date_select :returnDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

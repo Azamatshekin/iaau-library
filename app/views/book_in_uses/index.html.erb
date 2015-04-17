@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Book In Uses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fromdate</th>
+      <th>Todate</th>
+      <th>Returndate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @book_in_uses.each do |book_in_use| %>
+      <tr>
+        <td><%= book_in_use.fromDate %></td>
+        <td><%= book_in_use.toDate %></td>
+        <td><%= book_in_use.returnDate %></td>
+        <td><%= link_to 'Show', book_in_use %></td>
+        <td><%= link_to 'Edit', edit_book_in_use_path(book_in_use) %></td>
+        <td><%= link_to 'Destroy', book_in_use, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book in use', new_book_in_use_path %>

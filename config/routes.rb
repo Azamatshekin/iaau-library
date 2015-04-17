@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :statuses
+  resources :book_types
+  resources :books
+  resources :readers
+  resources :book_in_uses
+  resources :providers
+  resources :book_by_providers
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

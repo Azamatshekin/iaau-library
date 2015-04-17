@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fromdate:</strong>
+  <%= @book_in_use.fromDate %>
+</p>
+
+<p>
+  <strong>Todate:</strong>
+  <%= @book_in_use.toDate %>
+</p>
+
+<p>
+  <strong>Returndate:</strong>
+  <%= @book_in_use.returnDate %>
+</p>
+
+<%= link_to 'Edit', edit_book_in_use_path(@book_in_use) %> |
+<%= link_to 'Back', book_in_uses_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fromDate: 2015-04-17
+  toDate: 2015-04-17
+  returnDate: 2015-04-17
+
+two:
+  fromDate: 2015-04-17
+  toDate: 2015-04-17
+  returnDate: 2015-04-17
