@@ -1,0 +1,25 @@
+<html lang="en">
+<body>
+<%= render "layouts/header" %>
+<h2>Hello, world!</h2>
+
+<div class="container">
+  <%= yield %>
+  <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <h2>Hello, world!</h2>
+  <h2>Hello, world!</h2>
+  <h2>Hello, world!</h2>
+  <h2>Hello, world!</h2>
+  <% provide(:title, @user.email) %>
+  <h1>
+    <%= gravatar_for @user %>
+    <%= @user.email %>
+  </h1>
+
+  <%= debug(params) if Rails.env.development? %>
+</div>
+<%= render "layouts/footer" %>
+</body>
+</html>

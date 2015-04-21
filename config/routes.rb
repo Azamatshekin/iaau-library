@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'home/index'
 
   get 'home/aboutDevelopers'
@@ -13,8 +15,6 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'users/new'
-
   resources :categories
   resources :statuses
   resources :book_types
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :book_in_uses
   resources :providers
   resources :book_by_providers
+  resources :users
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
