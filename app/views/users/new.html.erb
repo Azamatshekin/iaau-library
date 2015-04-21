@@ -1,9 +1,5 @@
-<html lang="en">
-<body>
-<%= render "layouts/header" %>
 <h2>Hello, world!</h2>
 <div class="container">
-  <%= yield %>
   <% provide(:title, 'Sign up') %>
   <h1>Sign up</h1>
 
@@ -27,6 +23,3 @@
   </div>
   <%= debug(params) if Rails.env.development? %>
 </div>
-<%= render "layouts/footer" %>
-</body>
-</html>

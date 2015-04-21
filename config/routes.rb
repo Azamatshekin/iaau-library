@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
   get 'home/index'
 
   get 'home/aboutDevelopers'
@@ -14,6 +12,12 @@ Rails.application.routes.draw do
   get 'home/aboutMe'
 
   get 'users/new'
+
+  get 'signup'  => 'users#new'
+
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
 
   resources :categories
   resources :statuses
