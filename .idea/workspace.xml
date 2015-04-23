@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06a6fa12-216f-440a-928d-8288d3ccefe4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" afterPath="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/account_activations_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/account_activations_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mailers/previews/user_mailer_preview.rb" afterPath="$PROJECT_DIR$/test/mailers/previews/user_mailer_preview.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
     </list>
     <ignored path="LibraryApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +42,18 @@
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6993166" vertical-offset="1091" max-vertical-offset="1530">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6241458" vertical-offset="161" max-vertical-offset="1545">
+              <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="development.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="1140">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="28" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -167,7 +165,6 @@
         <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" />
         <option value="$PROJECT_DIR$/test/mailers/previews/user_mailer_preview.rb" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
@@ -179,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/views/password_resets/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/password_resets_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
@@ -1143,14 +1141,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="765">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
@@ -1255,10 +1245,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="1140">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="28" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6993166" vertical-offset="1091" max-vertical-offset="1530">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6241458" vertical-offset="161" max-vertical-offset="1545">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
           <folding />
         </state>
       </provider>
