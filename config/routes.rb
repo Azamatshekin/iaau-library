@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'home/index'
 
   get 'home/aboutDevelopers'
@@ -29,6 +33,7 @@ Rails.application.routes.draw do
   resources :book_by_providers
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
