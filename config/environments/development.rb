@@ -17,6 +17,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # EMAIL CONFIRMATION
+=begin
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -26,6 +27,22 @@ Rails.application.configure do
       :password             => 'library2015',
       :authentication       => 'plain',
       :enable_starttls_auto => true
+  }
+=end
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      :user_name            => 'library.iaau@gmail.com',
+      :password             => '2015library',
+      authentication:       'plain'
+      # enable_starttls_auto: true
+      # ^ ^ remove this option ^ ^
   }
   # config.action_mailer.delivery_method = :test
   # config.action_mailer.default_url_options = {:host => 'localhost:3000' }
