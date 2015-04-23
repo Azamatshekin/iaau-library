@@ -1,5 +1,10 @@
-<h1>UserMailer#account_activation</h1>
+<h1>Library Application</h1>
+
+<p>Hi <%= @user.email %>,</p>
 
 <p>
-  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
+  Welcome to the Library Management System DEVELOPED BY NURSULTAN BAKTYBEK UULU! Click on the link below to activate your account:
 </p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
