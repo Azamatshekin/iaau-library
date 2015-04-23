@@ -12,7 +12,12 @@ gem 'bcrypt',               '3.1.7'
 
 gem 'bootstrap-sass', '3.2.0.0'
 
+# it is for showing data by limit quantity
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
+# for generating 100 users automatically
+gem 'faker',                '1.4.2'
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

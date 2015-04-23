@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :providers
   resources :book_by_providers
   resources :users
+  resources :account_activations, only: [:edit]
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
