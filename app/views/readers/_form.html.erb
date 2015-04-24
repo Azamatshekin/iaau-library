@@ -20,10 +20,6 @@
     <%= f.text_field :surname %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
@@ -33,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
+    <%= f.date_select :birth_date, { :include_blank => true, :start_year => 1920 } %>
   </div>
   <div class="field">
     <%= f.label :photo %><br>
