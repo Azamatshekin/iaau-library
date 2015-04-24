@@ -1,10 +1,10 @@
 class ReadersController < ApplicationController
   before_action :set_reader, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user, only: [:index, :show, :new, :edit, :update, :destroy]
   # GET /readers
   # GET /readers.json
   def index
-    @readers = Reader.all
+    @readers = Reader.paginate(page: params[:page])
   end
 
   # GET /readers/1
@@ -25,7 +25,7 @@ class ReadersController < ApplicationController
   # POST /readers.json
   def create
     @reader = Reader.new(reader_params)
-
+    @reader.user = current_user
     respond_to do |format|
       if @reader.save
         format.html { redirect_to @reader, notice: 'Reader was successfully created.' }
@@ -65,6 +65,10 @@ class ReadersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_reader
       @reader = Reader.find(params[:id])
+    end
+
+    def only_own_edit
+      @reader.id==params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,39 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Readers</h1>
+<h1>Listing all Readers</h1>
+<%= will_paginate %>
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Passport</th>
+          <th>Birth date</th>
+          <th>Photo</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Passport</th>
-      <th>Birth date</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @readers.each do |reader| %>
-      <tr>
-        <td><%= reader.name %></td>
-        <td><%= reader.surname %></td>
-        <td><%= reader.email %></td>
-        <td><%= reader.address %></td>
-        <td><%= reader.passport %></td>
-        <td><%= reader.birth_date %></td>
-        <td><%= reader.photo %></td>
-        <td><%= link_to 'Show', reader %></td>
-        <td><%= link_to 'Edit', edit_reader_path(reader) %></td>
-        <td><%= link_to 'Destroy', reader, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @readers.each do |reader| %>
+          <tr>
+            <td><%= reader.name %></td>
+            <td><%= reader.surname %></td>
+            <td><%= reader.email %></td>
+            <td><%= reader.address %></td>
+            <td><%= reader.passport %></td>
+            <td><%= reader.birth_date %></td>
+            <td><%= reader.photo %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
 
 <br>
+<%= will_paginate %>
 
-<%= link_to 'New Reader', new_reader_path %>

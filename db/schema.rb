@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423122949) do
+ActiveRecord::Schema.define(version: 20150424100757) do
 
   create_table "book_by_providers", force: :cascade do |t|
     t.date     "date"
@@ -55,7 +55,10 @@ ActiveRecord::Schema.define(version: 20150423122949) do
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "providers", ["user_id"], name: "index_providers_on_user_id"
 
   create_table "readers", force: :cascade do |t|
     t.string   "name"
@@ -67,7 +70,10 @@ ActiveRecord::Schema.define(version: 20150423122949) do
     t.string   "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "readers", ["user_id"], name: "index_readers_on_user_id"
 
   create_table "statuses", force: :cascade do |t|
     t.string   "name"
