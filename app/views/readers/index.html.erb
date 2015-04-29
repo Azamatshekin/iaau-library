@@ -22,7 +22,11 @@
           <tr>
             <td><%= reader.name %></td>
             <td><%= reader.surname %></td>
-            <td><%= reader.email %></td>
+            <% if reader.user!=nil %>
+            <td><%= reader.user.email %></td>
+            <% else %>
+                <td><%= reader.email %></td>
+            <% end %>
             <td><%= reader.address %></td>
             <td><%= reader.passport %></td>
             <td><%= reader.birth_date %></td>

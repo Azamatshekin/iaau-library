@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+    <div class="field">
+      <%= f.label :Category %><br>
+      <%= f.select :category_id, @categories.map { |category| [category.name, category.id ] } %>
+    </div>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

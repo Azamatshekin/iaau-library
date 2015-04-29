@@ -15,6 +15,7 @@ class BookTypesController < ApplicationController
   # GET /book_types/new
   def new
     @book_type = BookType.new
+    @categories = Category.all
   end
 
   # GET /book_types/1/edit

@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424100757) do
+ActiveRecord::Schema.define(version: 20150428084140) do
 
   create_table "book_by_providers", force: :cascade do |t|
     t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "provider_id"
+    t.integer  "book_id"
   end
+
+  add_index "book_by_providers", ["book_id"], name: "index_book_by_providers_on_book_id"
+  add_index "book_by_providers", ["provider_id"], name: "index_book_by_providers_on_provider_id"
 
   create_table "book_in_uses", force: :cascade do |t|
     t.date     "fromDate"
@@ -25,7 +30,12 @@ ActiveRecord::Schema.define(version: 20150424100757) do
     t.date     "returnDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "book_id"
+    t.integer  "reader_id"
   end
+
+  add_index "book_in_uses", ["book_id"], name: "index_book_in_uses_on_book_id"
+  add_index "book_in_uses", ["reader_id"], name: "index_book_in_uses_on_reader_id"
 
   create_table "book_types", force: :cascade do |t|
     t.string   "name"
@@ -34,14 +44,22 @@ ActiveRecord::Schema.define(version: 20150424100757) do
     t.float    "price"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "category_id"
   end
+
+  add_index "book_types", ["category_id"], name: "index_book_types_on_category_id"
 
   create_table "books", force: :cascade do |t|
     t.string   "barcode"
     t.string   "INNcode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "book_type_id"
+    t.integer  "status_id"
   end
+
+  add_index "books", ["book_type_id"], name: "index_books_on_book_type_id"
+  add_index "books", ["status_id"], name: "index_books_on_status_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

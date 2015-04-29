@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+
+    <div class="field">
+      <%= f.label :BookType %><br>
+      <%= f.select :book_type_id, @book_types.map { |book| [book.name, book.id ] } %>
+    </div>
+
+    <div class="field">
+      <%= f.label :status %><br>
+      <%= f.select :status_id, @statuses.map { |status| [status.name, status.id ] } %>
+    </div>
+
+
   <div class="field">
     <%= f.label :barcode %><br>
     <%= f.text_field :barcode %>

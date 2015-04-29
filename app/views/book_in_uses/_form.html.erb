@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+
+    <div class="field">
+      <%= f.label :Book %><br>
+      <%= f.select :book_id, @books.map { |b| [b.barcode, b.id ] } %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Reader %><br>
+      <%= f.select :reader_id, @readers.map { |r| [r.name+" "+r.surname, r.id ] } %>
+    </div>
+
   <div class="field">
     <%= f.label :fromDate %><br>
     <%= f.date_select :fromDate %>

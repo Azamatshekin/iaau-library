@@ -15,6 +15,8 @@ class BookInUsesController < ApplicationController
   # GET /book_in_uses/new
   def new
     @book_in_use = BookInUse.new
+    @books = Book.all
+    @readers = Reader.all
   end
 
   # GET /book_in_uses/1/edit
