@@ -11,6 +11,7 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /.idea/*
+/app/models/user.rb
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
