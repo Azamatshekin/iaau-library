@@ -12,8 +12,11 @@ class SessionsController < ApplicationController
         if user.admin?
           message = "Welcome! you logged in as admin"
           flash[:success] = message
-        else
+        elsif user.role == reader_role
           message = "Welcome! you logged in as reader"
+          flash[:success] = message
+        elsif user.role == librarian_role
+          message = "Welcome! you logged in as librarian"
           flash[:success] = message
 
         end
