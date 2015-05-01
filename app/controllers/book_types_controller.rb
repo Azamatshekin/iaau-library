@@ -20,6 +20,7 @@ class BookTypesController < ApplicationController
 
   # GET /book_types/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /book_types
@@ -70,6 +71,6 @@ class BookTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_type_params
-      params.require(:book_type).permit(:name, :author, :publish_year, :price)
+      params.require(:book_type).permit(:name, :author, :publish_year, :price, :category_id)
     end
 end

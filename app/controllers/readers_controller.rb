@@ -1,6 +1,8 @@
 class ReadersController < ApplicationController
   before_action :set_reader, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:index, :show, :new, :edit, :update, :destroy]
+  before_action :only_own_edit, only: [:show, :edit, :update]
+
   # GET /readers
   # GET /readers.json
   def index
@@ -68,7 +70,12 @@ class ReadersController < ApplicationController
     end
 
     def only_own_edit
-      @reader.id==params[:id]
+
+      unless current_user.reader.id==@reader.id
+        store_location
+        flash[:danger] = "You cannot open other profiles."
+        redirect_to 'current path :))'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -21,6 +21,8 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @statuses = Status.all
+    @book_types = BookType.all
   end
 
   # POST /books
@@ -71,6 +73,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:barcode, :INNcode)
+      params.require(:book).permit(:barcode, :INNcode, :book_type_id, :status_id)
     end
 end

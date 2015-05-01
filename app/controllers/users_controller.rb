@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
   def create
     @user = User.new(user_params)    # Not the final implementation!
+    @user.role=1;
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
@@ -45,6 +46,18 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+=begin
+  def setLibrarian user
+    user.role=2
+    if user.save
+
+      flash[:success] = "#{user.email} is changed to librarian"
+      redirect_to users_url
+      # Handle a successful update.
+    end
+  end
+=end
 
   def destroy
     User.find(params[:id]).destroy
