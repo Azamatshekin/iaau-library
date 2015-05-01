@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_back_or user
+=begin
         if user.admin?
           message = "Welcome! you logged in as admin"
           flash[:success] = message
@@ -18,8 +19,8 @@ class SessionsController < ApplicationController
         elsif user.role == librarian_role
           message = "Welcome! you logged in as librarian"
           flash[:success] = message
-
         end
+=end
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."
