@@ -13,26 +13,29 @@
 
     <div class="field">
       <%= f.label :Category %><br>
-      <%= f.select :category_id, @categories.map { |category| [category.name, category.id ] } %>
+      <select class="form-control input-sm" + <%= f.select :category_id, @categories.map { |category| [category.name, category.id ] } %>
     </div>
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <input placeholder="" class="form-control input-sm" + <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <input placeholder="" class="form-control input-sm" + <%= f.text_field :author %>
   </div>
   <div class="field">
     <%= f.label :publish_year %><br>
-    <%= f.date_select :publish_year %>
+    <select class="form-control input-sm" +<%= f.date_select :publish_year %>
+
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <input placeholder="" class="form-control input-sm" +<%= f.text_field :price %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+
+      <button ="button" class="btn btn-default">Creat Book Type</button + <%= f.submit %>
+    </div>
+
 <% end %>
