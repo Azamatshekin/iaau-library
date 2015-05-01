@@ -8,6 +8,15 @@ module SessionsHelper
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
+
+  def librarian_role
+    @librarian_role=2
+  end
+
+  def reader_role
+    @reader_role=1
+  end
+
   # Returns the user corresponding to the remember token cookie.
   def current_user
     if (user_id = session[:user_id])
