@@ -9,7 +9,7 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
-# /app/models/user.rb
+#/app/models/user.rb
 /.idea/
 # Ignore all logfiles and tempfiles.
 /log/*

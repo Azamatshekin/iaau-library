@@ -5,4 +5,6 @@ class Book < ActiveRecord::Base
   has_many :book_by_providers, :dependent => :destroy
   validates :book_type_id, presence: true
   validates :status_id, presence: true
+  validates :barcode, presence: true, length: {maximum: 80, minimum: 2},
+            uniqueness: { case_sensitive: false }
 end
