@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+    <div class="col-md-6">
     <div class="field">
       <%= f.label :Category %><br>
       <select class="form-control input-sm" + <%= f.select :category_id, @categories.map { |category| [category.name, category.id ] } %>
@@ -37,5 +37,6 @@
 
       <button ="button" class="btn btn-default">Creat Book Type</button + <%= f.submit %>
     </div>
+
 
 <% end %>
