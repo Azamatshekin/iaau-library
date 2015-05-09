@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
         elsif user.role == librarian_role
           message = "Welcome! you logged in as librarian"
           flash[:success] = message
-
         end
       else
         message  = "Account not activated. "
