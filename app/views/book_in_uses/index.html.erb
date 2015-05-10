@@ -1,35 +1,73 @@
 <p id="notice"><%= notice %></p>
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Issue books
+        <small>All books taken by readers</small>
+      </h1>
+      <!--<ol class="breadcrumb">
+        <li><a href="index.html">Home</a>
+        </li>
+        <li class="active">Sidebar Page</li>
+      </ol>-->
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+      <div class="list-group">
+        <div class="list-group-item"><%= link_to 'All books taken by readers', book_in_uses_path %></div>
+        <div class="list-group-item"><%= link_to 'Issue Books', new_book_in_use_path %></div>
+        <div class="list-group-item"><%= link_to 'Find Reader', readers_path %></div>
+      </div>
+    </div>
+    <!-- Content Column -->
+    <div class="col-md-9">
+
+      <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+              <th>Reader</th>
+              <th>Book</th>
+              <th>Fromdate</th>
+              <th>Todate</th>
+              <th colspan="3"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @book_in_uses.each do |book_in_use| %>
+                <tr>
+                  <td><%= book_in_use.reader.name + " "+ book_in_use.reader.surname %></td>
+                  <td><%= book_in_use.book.book_type.name %></td>
+                  <td><%= book_in_use.fromDate %></td>
+                  <td><%= book_in_use.toDate %></td>
+                  <td><%= link_to image_tag("/images/info.png"), book_in_use %></td>
+                  <td><%= link_to image_tag("/images/modify.png"), edit_book_in_use_path(book_in_use) %></td>
+                  <td><%= link_to image_tag("/images/delete.png"), book_in_use, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+      </div>
+
+      <br>
+
+
+    </div>
+  </div>
+  <!-- /.row -->
+
+
+
+</div>
+<!-- /.container -->
 
 <h1>Listing Book In Uses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Reader</th>
-      <th>Book</th>
-      <th>Fromdate</th>
-      <th>Todate</th>
-      <th>Returndate</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @book_in_uses.each do |book_in_use| %>
-      <tr>
-        <td><%= book_in_use.reader.name + " "+ book_in_use.reader.surname %></td>
-        <td><%= book_in_use.book.book_type.name %></td>
-        <td><%= book_in_use.fromDate %></td>
-        <td><%= book_in_use.toDate %></td>
-        <td><%= book_in_use.returnDate %></td>
-        <td><%= link_to 'Show', book_in_use %></td>
-        <td><%= link_to 'Edit', edit_book_in_use_path(book_in_use) %></td>
-        <td><%= link_to 'Destroy', book_in_use, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Book in use', new_book_in_use_path %>
