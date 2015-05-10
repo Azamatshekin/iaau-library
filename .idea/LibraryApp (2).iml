@@ -131,6 +131,7 @@
     <orderEntry type="library" scope="PROVIDED" name="arel (v6.0.0, ruby-1.9.3-p484) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.7, ruby-1.9.3-p484) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v0.7.2, ruby-1.9.3-p484) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.4.0, ruby-1.9.3-p484) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.2.0.0, ruby-1.9.3-p484) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v0.0.10, ruby-1.9.3-p484) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, ruby-1.9.3-p484) [gem]" level="application" />

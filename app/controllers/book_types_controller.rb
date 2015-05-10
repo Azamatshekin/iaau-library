@@ -1,5 +1,6 @@
 class BookTypesController < ApplicationController
   before_action :set_book_type, only: [:show, :edit, :update, :destroy]
+  before_action :user_library, only: [:new, :edit, :update, :destroy]
 
   # GET /book_types
   # GET /book_types.json

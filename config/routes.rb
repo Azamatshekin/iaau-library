@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'public/AccessDenied'
+
+  get 'public/Unauthorized'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -18,6 +22,8 @@ Rails.application.routes.draw do
   get 'users/new'
 
   get 'signup'  => 'users#new'
+
+  get   'access_denied'   => 'public#AccessDenied'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

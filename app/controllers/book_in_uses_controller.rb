@@ -1,5 +1,6 @@
 class BookInUsesController < ApplicationController
   before_action :set_book_in_use, only: [:show, :edit, :update, :destroy]
+  before_action :user_library, only: [:new, :edit, :update, :destroy]
 
   # GET /book_in_uses
   # GET /book_in_uses.json
@@ -21,6 +22,8 @@ class BookInUsesController < ApplicationController
 
   # GET /book_in_uses/1/edit
   def edit
+    @readers = Reader.all
+    @books = Book.all
   end
 
   # POST /book_in_uses
@@ -71,6 +74,6 @@ class BookInUsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_in_use_params
-      params.require(:book_in_use).permit(:fromDate, :toDate, :returnDate)
+      params.require(:book_in_use).permit(:fromDate, :toDate, :returnDate, :book_id, :reader_id)
     end
 end

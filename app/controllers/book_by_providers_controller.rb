@@ -1,5 +1,6 @@
 class BookByProvidersController < ApplicationController
   before_action :set_book_by_provider, only: [:show, :edit, :update, :destroy]
+  before_action :user_library, only: [:new, :edit, :update, :destroy]
 
   # GET /book_by_providers
   # GET /book_by_providers.json

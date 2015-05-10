@@ -1,5 +1,6 @@
 class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
+  before_action :user_library, only: [:new, :edit, :update, :destroy]
 
   # GET /providers
   # GET /providers.json
