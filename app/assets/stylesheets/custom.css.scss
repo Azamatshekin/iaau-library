@@ -69,3 +69,41 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+$navbar-inverse-bg: #0EF016;
+$navbar-inverse-border: #060875;
+
+// Inverse navbar
+
+ul.dropdown-menu {
+  background-color: $navbar-inverse-bg;
+  border-color: $navbar-inverse-border;
+}
+
+.navbar-inverse {
+  background-color: $navbar-inverse-bg;
+  border-color: $navbar-inverse-border;
+}
+.nav.navbar-nav.navbar-right li a {
+  color: blue;
+  font-size: 15px;
+}
+
+
+li.active{
+  background: #34b586 !important;
+}
+
+li > a:focus{
+  background: #34b586 !important;
+}
+
+li:hover > a{
+  background: #34b586 !important;
+  color: #FFFFFF !important;
+}
+
+li > a:hover{
+  color: #FFFFFF !important;
+  background: #34b586 !important;
+}

@@ -1,12 +1,13 @@
 .footer-distributed{
-	background-color: #292c2f;
+	background-color: #0EF016;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	font: bold 16px sans-serif;
 	text-align: left;
 
-	padding: 50px 60px;
+	padding: 20px 30px;
+    padding-top: 0;
 	margin-top: 80px;
 	overflow: hidden;
 }
@@ -18,7 +19,7 @@
 }
 
 .footer-distributed .footer-links{
-	color:  #ffffff;
+	color:  darkblue;
 	margin: 0 0 10px;
 	padding: 0;
 }
@@ -31,7 +32,7 @@
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
+	color:  blue;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
