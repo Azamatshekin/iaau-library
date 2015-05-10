@@ -70,8 +70,8 @@ input {
   }
 }
 
-$navbar-inverse-bg: #0EF016;
-$navbar-inverse-border: #060875;
+$navbar-inverse-bg: #2C198C;
+$navbar-inverse-border: black;
 
 // Inverse navbar
 
@@ -85,25 +85,25 @@ ul.dropdown-menu {
   border-color: $navbar-inverse-border;
 }
 .nav.navbar-nav.navbar-right li a {
-  color: blue;
-  font-size: 15px;
+  color: #ffffff;
+  font-size: 17px;
 }
 
 
 li.active{
-  background: #34b586 !important;
+  background: #7823A8 !important;
 }
 
 li > a:focus{
-  background: #34b586 !important;
+  background: #7823A8 !important;
 }
 
 li:hover > a{
-  background: #34b586 !important;
+  background: #7823A8 !important;
   color: #FFFFFF !important;
 }
 
 li > a:hover{
   color: #FFFFFF !important;
-  background: #34b586 !important;
+  background: #7823A8 !important;
 }
