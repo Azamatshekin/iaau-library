@@ -17,7 +17,7 @@ class BookInUsesController < ApplicationController
   def new
     @book_in_use = BookInUse.new
     @books = Book.all
-    @readers = Reader.all
+    @readers = Reader.joins(:user).where("users.role = 1").paginate(page: params[:page])
   end
 
   # GET /book_in_uses/1/edit

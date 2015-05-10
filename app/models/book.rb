@@ -7,4 +7,13 @@ class Book < ActiveRecord::Base
   validates :status_id, presence: true
   validates :barcode, presence: true, length: {maximum: 80, minimum: 2},
             uniqueness: { case_sensitive: false }
+
+  def self.search(search)
+    if search
+      self.joins(:book_type).where("barcode like ? or book_types.name like ? or book_types.author like ?",
+                                   "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      self.all
+    end
+  end
 end
