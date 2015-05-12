@@ -23,9 +23,9 @@
             <td><%= book_type.author %></td>
             <td><%= book_type.publish_year %></td>
             <td><%= book_type.price %></td>
-            <td><%= link_to 'Show', book_type %></td>
-            <td><%= link_to 'Edit', edit_book_type_path(book_type) %></td>
-            <td><%= link_to 'Destroy', book_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to image_tag("/images/info.png"), book_type %></td>
+            <td><%= link_to image_tag("/images/modify.png"), edit_book_type_path(book_type) %></td>
+            <td><%= link_to image_tag("/images/delete.png"), book_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
@@ -33,4 +33,4 @@
 </div>
 <br>
 
-<%= link_to 'New Book type', new_book_type_path %>
+<%= link_to  image_tag("/images/add.png") + raw("<span>Add new Book Template</span>"), new_book_type_path %>

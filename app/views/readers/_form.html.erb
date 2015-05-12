@@ -27,10 +27,17 @@
     <%= f.label :passport %><br>
     <%= f.text_field :passport %>
   </div>
-  <div class="field">
-    <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date, { :include_blank => true, :start_year => 1920 } %>
-  </div>
+
+
+    <div class="field">
+      <%= f.label :birth_date %><br>
+      <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', altFormat: 'yyyy-mm-dd' %>
+      <script type="text/javascript">
+          $('[data-behaviour~=datepicker]').datepicker();
+      </script>
+    </div>
+
+
   <div class="field">
     <%= f.label :photo %><br>
     <%= f.text_field :photo %>
