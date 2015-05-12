@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'upload/upload_page'
+
+  get 'upload/pdf'
+
   get 'public/AccessDenied'
 
   get 'public/Unauthorized'
@@ -28,6 +32,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  post   'upload'   => 'upload#uploadFile'
 
   resources :categories
   resources :statuses

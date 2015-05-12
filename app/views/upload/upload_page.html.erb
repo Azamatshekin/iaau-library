@@ -1,0 +1,8 @@
+<h1>File Upload</h1>
+<%= form_for(:upload, :url => { :action => "uploadFile" }, :multipart => true) do |form| %>
+    <p><%= form.label :datafile, "Select File" %> :
+      <%= form.file_field 'datafile' %></p>
+    <%= form.submit "Upload" %>
+<% end %>
+
+<p><%= link_to 'PDF', upload_pdf_path %><p>
