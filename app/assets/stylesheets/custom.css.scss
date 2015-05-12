@@ -70,7 +70,7 @@ input {
   }
 }
 
-$navbar-inverse-bg: #2C198C;
+$navbar-inverse-bg: #155E99;
 $navbar-inverse-border: black;
 
 // Inverse navbar
@@ -87,6 +87,7 @@ ul.dropdown-menu {
 .nav.navbar-nav.navbar-right li a {
   color: #ffffff;
   font-size: 16px;
+  font-weight: bolder;
 }
 
 
@@ -106,4 +107,21 @@ li:hover > a{
 li > a:hover{
   color: #FFFFFF !important;
   background: #7823A8 !important;
+}
+
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 71.5%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+.footer, .push {
+  height: 4em;
 }
