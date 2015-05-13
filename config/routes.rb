@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'readers/show_books'
+
   get 'home/aboutDevelopers'
 
   get 'home/contact'

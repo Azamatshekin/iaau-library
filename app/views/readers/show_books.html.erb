@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing all Books Taken by you</h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>taken date</th>
+      <th>category</th>
+      <th>book name</th>
+      <th>author</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @book_in_uses.each do |b| %>
+        <tr>
+          <td><%= b.fromDate %></td>
+          <td><%= b.book.book_type.category.name %></td>
+          <td><%= b.book.book_type.name %></td>
+          <td><%= b.book.book_type.author %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+

@@ -14,6 +14,11 @@ class ReadersController < ApplicationController
   def show
   end
 
+  def show_books
+    @book_in_uses= current_user.reader.book_in_uses
+  end
+
+
   # GET /readers/new
   def new
     @reader = Reader.new

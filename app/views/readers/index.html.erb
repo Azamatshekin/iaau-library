@@ -30,7 +30,7 @@
             <td><%= reader.address %></td>
             <td><%= reader.passport %></td>
             <td><%= reader.birth_date %></td>
-            <td><%= reader.photo %></td>
+            <td><%= image_tag (reader.photo.url  :height => "50%", :width => "50%") if reader.photo? %></td>
           </tr>
         <% end %>
       </tbody>
