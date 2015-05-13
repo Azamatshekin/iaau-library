@@ -66,12 +66,14 @@
                   <li><%= link_to "Book Template", book_types_path %></li>
                   <li><%= link_to "Books", books_path %></li>
                   <li><%= link_to "Issue book", book_in_uses_path %></li>
+                  <li><%= link_to "Upload and Download digital book", upload_upload_download_page_path %></li>
 
               <% elsif current_user.role==reader_role %>
                   <li><%= link_to "Books", books_path %></li>
               <% end %>
               <li><%= link_to "Readers", readers_path %></li>
               <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "Download digital book", upload_upload_download_page_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   Account <b class="caret"></b>

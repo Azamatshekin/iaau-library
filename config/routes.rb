@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  get 'upload/upload_page'
+  get 'upload/upload_download_page'
 
-  get 'upload/pdf'
+  get "downloadPDF/:filename", :controller => "upload", :action => "getPDF", as: 'download_pdf'
+
+  get "downloadDOC/:filename", :controller => "upload", :action => "getDOC", as: 'download_doc'
+
+  get "deletePDF/:filename", :controller => "upload", :action => "deletePDF", as: 'delete_pdf'
+
+  get "deleteDOC/:filename", :controller => "upload", :action => "deleteDOC", as: 'delete_doc'
 
   get 'public/AccessDenied'
 

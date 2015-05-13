@@ -1,0 +1,28 @@
+<h1>File Upload</h1> <% if logged_in? %>
+    <% if current_user.role==librarian_role %>
+
+        <%= form_for(:upload, :url => { :action => "uploadFile" }, :multipart => true) do |form| %>
+            <p><%= form.label :datafile, "Select File" %> :
+              <%= form.file_field 'datafile' %></p>
+            <%= form.submit "Upload" %>
+        <% end %>
+    <% end %>
+
+
+    <% @PDFfiles.each { |pdf_id, name|   %>
+        <p><%= name %> <%= link_to 'Download PDF',  download_pdf_path(:filename => pdf_id)  %>
+
+          <% if current_user.role==librarian_role %>
+            <%= link_to 'Delete PDF',  delete_pdf_path(:filename => pdf_id)  %>
+          <%end%>
+        </p>
+    <% } %>
+
+    <% @DOCfiles.each { |doc_id, name|   %>
+        <p><%= name %> <%= link_to 'Download DOC',  download_doc_path(:filename => doc_id)  %>
+          <% if current_user.role==librarian_role %>
+            <%= link_to 'Delete DOC',  delete_doc_path(:filename => doc_id)  %>
+          <%end%>
+        </p>
+    <% } %>
+<% end %>
