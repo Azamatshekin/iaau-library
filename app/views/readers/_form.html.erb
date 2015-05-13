@@ -1,4 +1,4 @@
-<%= form_for(@reader) do |f| %>
+<%= form_for(@reader, html: { multipart: true }) do |f| %>
   <% if @reader.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reader.errors.count, "error") %> prohibited this reader from being saved:</h2>
@@ -36,13 +36,22 @@
           $('[data-behaviour~=datepicker]').datepicker();
       </script>
     </div>
+    <%= image_tag @reader.photo.url if @reader.photo? %>
 
+    <span class="picture">
+    <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
 
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.text_field :photo %>
-  </div>
   <div class="actions">
     <%= f.submit 'Save' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+    $('#reader_photo').bind('change', function() {
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            alert('Maximum file size is 5MB. Please choose a smaller file.');
+        }
+    });
+</script>
