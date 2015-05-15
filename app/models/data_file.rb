@@ -11,7 +11,8 @@ class DataFile < ActiveRecord::Base
 
   def self.search(search)
     if search
-      self.joins(:category).where("data_files.name like ? or categories.name like ? ", "%#{search}%", "%#{search}%")
+      search = search.to_s.upcase
+      self.joins(:category).where("data_files.name like upper(?) or categories.name like upper(?) ", "%#{search}%", "%#{search}%")
     else
       self.all
     end

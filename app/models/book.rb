@@ -10,7 +10,8 @@ class Book < ActiveRecord::Base
 
   def self.search(search)
     if search
-      self.joins(:book_type).where("barcode like ? or book_types.name like ? or book_types.author like ?",
+      search = search.to_s.upcase
+      self.joins(:book_type).where("barcode like upper(?) or book_types.name like upper(?) or book_types.author like upper(?)",
                                    "%#{search}%", "%#{search}%", "%#{search}%")
     else
       self.all
@@ -18,7 +19,8 @@ class Book < ActiveRecord::Base
   end
   def self.search_lost(search)
     if search
-      self.joins(:book_type).where("(barcode like ? or book_types.name like ? or book_types.author like ?) and status_id=3",
+      search = search.to_s.upcase
+      self.joins(:book_type).where("(barcode like upper(?) or book_types.name like upper(?) or book_types.author like upper(?)) and status_id=3",
                                    "%#{search}%", "%#{search}%", "%#{search}%")
     else
       self.where("status_id=3")

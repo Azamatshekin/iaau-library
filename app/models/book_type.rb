@@ -4,7 +4,8 @@ class BookType < ActiveRecord::Base
 
   def self.search(search)
     if search
-      self.joins(:category).where("book_types.name like ? or author like ? or publish_year like ? or categories.name like ? or price like ?",
+      search = search.to_s.upcase
+      self.joins(:category).where("book_types.name like upper(?) or author like upper(?) or publish_year like ? or categories.name like upper(?) or price like ?",
                                    "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
       self.all

@@ -6,7 +6,7 @@ class ReadersController < ApplicationController
   # GET /readers
   # GET /readers.json
   def index
-    @readers = Reader.joins(:user).where("users.role = 1").paginate(page: params[:page])
+    @readers = Reader.search(params[:search]).paginate(page: params[:page])
   end
 
   # GET /readers/1
