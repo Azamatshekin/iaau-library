@@ -11,6 +11,7 @@
 /db/*.sqlite3-journal
 /.idea/
 /public/digital_books/
+/public/uploads/
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
