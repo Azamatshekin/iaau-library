@@ -67,15 +67,17 @@ class UploadController < ApplicationController
 
 
   def getPDF
-    name = params[:filename]
+    id = params[:filename]
+    file = DataFile.find id
     directory = "public/digital_books"
-    send_file Rails.root.join(directory, name+'.pdf'), :type=>"application/pdf", :x_sendfile=>true
+    send_file Rails.root.join(directory, id+'.pdf'), :filename => file.name, :type=>"application/pdf", :x_sendfile=>true
   end
 
   def getDOC
-    name = params[:filename]
+    id = params[:filename]
+    file = DataFile.find id
     directory = "public/digital_books"
-    send_file Rails.root.join(directory, name+'.doc'), :type=>"application/doc", :x_sendfile=>true
+    send_file Rails.root.join(directory, id+'.doc'), :filename => file.name, :type=>"application/doc", :x_sendfile=>true
   end
 
   def allBooks

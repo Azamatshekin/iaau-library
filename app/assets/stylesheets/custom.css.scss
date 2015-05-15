@@ -1,22 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /* forms */
-$gray-medium-light: #eaeaea;
-
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -27,6 +11,7 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+  color: black;
 }
 #error_explanation {
   color: red;
@@ -37,9 +22,11 @@ input {
 }
 
 .field_with_errors {
-  @extend .has-error;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 2px solid lightsalmon;
   .form-control {
-    color: $state-danger-text;
+    color: green;
   }
 }
 
@@ -132,11 +119,15 @@ body {
 }
 
 
+
 .panel-default > .panel-heading {
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
   cursor: pointer;
-  font-size: 22px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid #0074BD;
 }
 
 .label {
