@@ -19,7 +19,16 @@
         <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
-    <h4><%= link_to "Click HERE if you forget password", new_password_reset_path %></h4>
-    <h4> New user? <%= link_to "Sign up now!", signup_path %></h4>
+    <br/>
+    <br/>
+    <br/>
+
+    <button type="button" class="btn btn-primary">
+      <%= link_to "SIGN UP NOW!", signup_path %>
+    </button>
+
+    <button type="button" class="btn btn-primary">
+      <%= link_to "forget password", new_password_reset_path %>
+    </button>
   </div>
 </div>

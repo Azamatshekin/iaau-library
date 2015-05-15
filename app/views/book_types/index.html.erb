@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Book Types</h1>
+<div class="label_div">
+    <span class="label label-info">
+        Listing Book Types</span>
+</div>
 
 <div class="table-responsive">
   <table class="table">
@@ -33,4 +35,5 @@
 </div>
 <br>
 
-<%= link_to  image_tag("/images/add.png") + raw("<span>Add new Book Template</span>"), new_book_type_path %>
+<button type="button" class="btn btn-primary">
+  <%= link_to  image_tag("/images/add.png") + raw("<span>Add new Book Template</span>"), new_book_type_path %></button>
