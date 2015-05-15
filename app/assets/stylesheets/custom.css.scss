@@ -117,7 +117,7 @@ html, body {
   height: 100%;
 }
 .wrapper {
-  min-height: 71.5%;
+  min-height: 75.6%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -4em;
@@ -132,10 +132,11 @@ body {
 }
 
 
-
-.label_div {
+.panel-default > .panel-heading {
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+  font-size: 22px;
 }
 
 .label {

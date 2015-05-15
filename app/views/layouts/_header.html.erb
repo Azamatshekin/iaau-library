@@ -23,20 +23,14 @@
           <li>
             <%= link_to "Contact", "/home/contact"%>
           </li>
-          <li>
-            <%= link_to "Portfolio", "/home/portfolio"%>
-          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li>
-                <%= link_to "About ME", "/home/aboutMe"%>
+                <%= link_to "About Library", "/home/aboutMe"%>
               </li>
               <li>
                 <%= link_to "About Developers", "/home/aboutDevelopers"%>
-              </li>
-              <li>
-                <%= link_to "About Ruby on Rails", "/home/aboutRuby"%>
               </li>
             </ul>
           </li>
@@ -82,10 +76,11 @@
               <% elsif current_user.role==reader_role %>
                   <li><%= link_to "Books", books_path %></li>
                   <li><%= link_to "my books from library", readers_show_books_path %></li>
+              <% else %>
+                  <li><%= link_to "Readers", readers_path %></li>
+                  <li><%= link_to "Users", users_path %></li>
+                  <li><%= link_to "Download digital book", upload_upload_download_page_path %></li>
               <% end %>
-              <li><%= link_to "Readers", readers_path %></li>
-              <li><%= link_to "Users", users_path %></li>
-              <li><%= link_to "Download digital book", upload_upload_download_page_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   Account <b class="caret"></b>

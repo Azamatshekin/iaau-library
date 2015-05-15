@@ -5,7 +5,7 @@ class BookTypesController < ApplicationController
   # GET /book_types
   # GET /book_types.json
   def index
-    @book_types = BookType.all
+    @book_types = BookType.search(params[:search])
   end
 
   # GET /book_types/1
