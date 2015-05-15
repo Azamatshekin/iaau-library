@@ -15,7 +15,7 @@ class BooksController < ApplicationController
   def lost_books_report
     #@books = Book.all
 
-    @books = Book.search_lost(params[:search]).paginate(page: params[:page])
+    @books = Book.search_lost(params[:search]).paginate(page: params[:page], :per_page => 10)
   end
   # GET /books/1
   # GET /books/1.json

@@ -6,7 +6,7 @@ class ReadersController < ApplicationController
   # GET /readers
   # GET /readers.json
   def index
-    @readers = Reader.search(params[:search]).paginate(page: params[:page])
+    @readers = Reader.search(params[:search]).paginate(page: params[:page], :per_page => 10)
   end
 
   # GET /readers/1

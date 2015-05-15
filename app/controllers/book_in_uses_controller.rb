@@ -11,7 +11,7 @@ class BookInUsesController < ApplicationController
 
 
   def not_returned_report
-    @book_in_uses = BookInUse.search_not_returned(params[:search]).paginate(page: params[:page])
+    @book_in_uses = BookInUse.search_not_returned(params[:search]).paginate(page: params[:page], :per_page => 10)
   end
 
   # GET /book_in_uses/1

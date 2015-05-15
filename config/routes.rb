@@ -51,7 +51,6 @@ Rails.application.routes.draw do
   resources :books
   resources :readers
   resources :book_in_uses
-  resources :providers
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

@@ -12,7 +12,7 @@ class Reader < ActiveRecord::Base
   def self.search(search)
     if search
       search = search.to_s.upcase
-      self.joins(:user).where("(name like upper(?) or surname like upper(?)) and users.role = 1", "%#{search}%", "%#{search}%")
+      self.joins(:user).where("(upper(name) like ? or upper(surname) like ?) and users.role = 1", "%#{search}%", "%#{search}%")
     else
       self.joins(:user).where("users.role = 1")
     end
