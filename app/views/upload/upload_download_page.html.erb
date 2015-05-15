@@ -1,28 +1,72 @@
-<h1>File Upload</h1> <% if logged_in? %>
+
+<% if logged_in? %>
     <% if current_user.role==librarian_role %>
-
-        <%= form_for(:upload, :url => { :action => "uploadFile" }, :multipart => true) do |form| %>
-            <p><%= form.label :datafile, "Select File" %> :
-              <%= form.file_field 'datafile' %></p>
-            <%= form.submit "Upload" %>
-        <% end %>
+        <div class="row">
+              <%= form_for(:upload, :url => { :action => "uploadFile" }, :multipart => true) do |form| %>
+                <h3><%= form.label :datafile, "Select File" %> :</h3>
+              <div class="col-md-9">
+                  <%= form.file_field 'datafile', class: "form-control input-sm" %></p>
+              </div>
+                  <div class="col-md-3">
+                     <%= form.submit "Upload", class: "btn btn-success" %>
+                  </div>
+              <% end %>
+        </div>
     <% end %>
+    <div class="row">
+      <div class="col-md-9">
+        <%= text_field_tag :search, params[:search], class: "form-control input-sm", placeholder: "Search by ( Name )" %>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-default" type="submit">Search  <%= image_tag("/images/search-icon-hi.png", width: 16, height: 16) %></button>
+      </div>
+    </div>
 
+    <div class="panel panel-default">
 
-    <% @PDFfiles.each { |pdf_id, name|   %>
-        <p><%= name %> <%= link_to 'Download PDF',  download_pdf_path(:filename => pdf_id)  %>
+      <!-- Default panel contents -->
 
-          <% if current_user.role==librarian_role %>
-            <%= link_to 'Delete PDF',  delete_pdf_path(:filename => pdf_id)  %>
-          <%end%>
-        </p>
-    <% } %>
+      <div class="panel-heading">Download Digital Books</div>
 
-    <% @DOCfiles.each { |doc_id, name|   %>
-        <p><%= name %> <%= link_to 'Download DOC',  download_doc_path(:filename => doc_id)  %>
-          <% if current_user.role==librarian_role %>
-            <%= link_to 'Delete DOC',  delete_doc_path(:filename => doc_id)  %>
-          <%end%>
-        </p>
-    <% } %>
+      <%= form_tag(upload_upload_download_page_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+          <div class="table-responsive table-striped">
+
+            <table class="table">
+
+              <thead>
+              <tr>
+                <th colspan="3">Name</th>
+                <th></th>
+              </tr>
+              </thead>
+
+              <tbody>
+                    <% @files.each { |file|   %>
+                          <% if file.name.include? '.pdf' %>
+                              <tr>
+                                <td><h5><%= file.name %></h5></td>
+                                <td> <%= link_to 'Download PDF',  download_pdf_path(:filename => file.id), type:"button", class: "btn btn-default"  %></td>
+
+                                    <% if current_user.role==librarian_role %>
+                                        <td>  <%= link_to 'Delete PDF',  delete_pdf_path(:filename => file.id), type:"button", class: "btn btn-default", data: { confirm: 'Are you sure?' }   %></td>
+                                    <%end%>
+                                  </p>
+                              </tr>
+                          <%else%>
+                              <tr>
+                                <td><h5><%= file.name %></h5></td>
+                                <td><%= link_to 'Download DOC',  download_doc_path(:filename => file.id), type:"button", class: "btn btn-default"  %></td>
+
+                                <% if current_user.role==librarian_role %>
+                                    <td><%= link_to 'Delete DOC',  delete_doc_path(:filename => file.id), type:"button", class: "btn btn-default", data: { confirm: 'Are you sure?' }  %></td>
+                                <%end%>
+                              </tr>
+                          <%end%>
+                      <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <% end %>
+
 <% end %>

@@ -6,4 +6,12 @@ class DataFile < ActiveRecord::Base
     # write the file
     File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
   end
+
+  def self.search(search)
+    if search
+      self.where("name like ? ", "%#{search}%")
+    else
+      self.all
+    end
+  end
 end
