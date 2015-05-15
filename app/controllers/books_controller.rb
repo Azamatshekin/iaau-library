@@ -1,15 +1,22 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :user_library, only: [:new, :edit, :update, :destroy]
+  before_action :user_admin, only: [:lost_books_report]
 
   # GET /books
   # GET /books.json
   def index
     #@books = Book.all
 
-    @books = Book.search(params[:search])
+    @books = Book.search(params[:search]).paginate(page: params[:page])
   end
 
+
+  def lost_books_report
+    #@books = Book.all
+
+    @books = Book.search_lost(params[:search]).paginate(page: params[:page])
+  end
   # GET /books/1
   # GET /books/1.json
   def show

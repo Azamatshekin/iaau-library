@@ -2,7 +2,7 @@ class UploadController < ApplicationController
   before_action :logged_in_user, only: [:upload_download_page]
   before_action :user_library, only: [:uploadFile, :deleteDOC, :deletePDF]
   def upload_download_page
-
+    @categories = Category.all
     @files = DataFile.search(params[:search])
 
   end
@@ -11,8 +11,9 @@ class UploadController < ApplicationController
   end
   def uploadFile
     upload = params[:upload]
-    if upload!=nil
+    if upload!=nil and upload['datafile']!=nil
       file = DataFile.new
+      file.category_id = upload[:category_id]
       file.name = upload['datafile'].original_filename
       if file.save
         if(file.name.include? '.pdf')

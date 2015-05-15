@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513082644) do
+ActiveRecord::Schema.define(version: 20150515122212) do
 
   create_table "book_by_providers", force: :cascade do |t|
     t.date     "date"
@@ -68,10 +68,13 @@ ActiveRecord::Schema.define(version: 20150513082644) do
   end
 
   create_table "data_files", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
+    t.integer  "category_id"
   end
+
+  add_index "data_files", ["category_id"], name: "index_data_files_on_category_id"
 
   create_table "providers", force: :cascade do |t|
     t.string   "fullname"

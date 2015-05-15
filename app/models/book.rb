@@ -16,4 +16,12 @@ class Book < ActiveRecord::Base
       self.all
     end
   end
+  def self.search_lost(search)
+    if search
+      self.joins(:book_type).where("(barcode like ? or book_types.name like ? or book_types.author like ?) and status_id=3",
+                                   "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      self.where("status_id=3")
+    end
+  end
 end

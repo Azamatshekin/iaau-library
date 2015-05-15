@@ -5,7 +5,7 @@ class BookTypesController < ApplicationController
   # GET /book_types
   # GET /book_types.json
   def index
-    @book_types = BookType.search(params[:search])
+    @book_types = BookType.search(params[:search]).paginate(page: params[:page])
   end
 
   # GET /book_types/1

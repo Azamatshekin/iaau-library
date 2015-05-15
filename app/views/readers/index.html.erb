@@ -1,40 +1,54 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing all Readers</h1>
 <%= will_paginate %>
-<div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Passport</th>
-          <th>Birth date</th>
-          <th>Photo</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <% @readers.each do |reader| %>
-          <tr>
-            <td><%= reader.name %></td>
-            <td><%= reader.surname %></td>
-            <% if reader.user!=nil %>
-            <td><%= reader.user.email %></td>
-            <% else %>
-                <td><%= reader.email %></td>
-            <% end %>
-            <td><%= reader.address %></td>
-            <td><%= reader.passport %></td>
-            <td><%= reader.birth_date %></td>
-            <td><%= image_tag (reader.photo.url  :height => "50%", :width => "50%") if reader.photo? %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+
+<div class="panel panel-default">
+
+  <!-- Default panel contents -->
+
+  <div class="panel-heading">Listing Books</div>
+
+    <div class="table-responsive table-striped">
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th><h4>Name</h4></th>
+                  <th><h4>Surname</h4></th>
+                  <th><h4>Email</h4></th>
+                  <th><h4>Address</h4></th>
+                  <th><h4>Passport</h4></th>
+                  <th><h4>Birth date</h4></th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @readers.each do |reader| %>
+                  <tr>
+                    <td>
+                        <div id="wrap">
+                          <img class="avatar" + <%= image_tag(reader.photo.url, width: 60, height: 60) if reader.photo? %>
+                        </div>
+                    </td>
+                    <td><h4><%= reader.name %></h4></td>
+                    <td><h4><%= reader.surname %></h4></td>
+                    <% if reader.user!=nil %>
+                    <td><h4><%= reader.user.email %></h4></td>
+                    <% else %>
+                        <td><h4><%= reader.email %></h4></td>
+                    <% end %>
+                    <td><h4><%= reader.address %></h4></td>
+                    <td><h4><%= reader.passport %></h4></td>
+                    <td><h4><%= reader.birth_date %></h4></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
 </div>
 
 <br>

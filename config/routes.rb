@@ -33,6 +33,9 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
+  get 'book_in_uses/not_returned_report'
+  get 'books/lost_books_report'
+
   get 'signup'  => 'users#new'
 
   get   'access_denied'   => 'public#AccessDenied'
@@ -49,7 +52,6 @@ Rails.application.routes.draw do
   resources :readers
   resources :book_in_uses
   resources :providers
-  resources :book_by_providers
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

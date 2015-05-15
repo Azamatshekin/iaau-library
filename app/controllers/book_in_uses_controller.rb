@@ -1,11 +1,17 @@
 class BookInUsesController < ApplicationController
   before_action :set_book_in_use, only: [:show, :edit, :update, :destroy]
   before_action :user_library, only: [:new, :edit, :update, :destroy]
+  before_action :user_admin, only: [:not_returned_report]
 
   # GET /book_in_uses
   # GET /book_in_uses.json
   def index
-    @book_in_uses = BookInUse.all
+    @book_in_uses = BookInUse.search(params[:search]).paginate(page: params[:page])
+  end
+
+
+  def not_returned_report
+    @book_in_uses = BookInUse.search_not_returned(params[:search]).paginate(page: params[:page])
   end
 
   # GET /book_in_uses/1
@@ -16,8 +22,8 @@ class BookInUsesController < ApplicationController
   # GET /book_in_uses/new
   def new
     @book_in_use = BookInUse.new
-    @books = Book.all
-    @readers = Reader.joins(:user).where("users.role = 1").paginate(page: params[:page])
+    @books = Book.where("books.status_id = 1")
+    @readers = Reader.joins(:user).where("users.role = 1")
   end
 
   # GET /book_in_uses/1/edit
@@ -33,6 +39,9 @@ class BookInUsesController < ApplicationController
 
     respond_to do |format|
       if @book_in_use.save
+        book = Book.find @book_in_use.book.id
+        book.status_id=2
+        book.save
         format.html { redirect_to @book_in_use, notice: 'Book in use was successfully created.' }
         format.json { render :show, status: :created, location: @book_in_use }
       else

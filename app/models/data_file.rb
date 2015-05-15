@@ -1,4 +1,6 @@
 class DataFile < ActiveRecord::Base
+  belongs_to :category
+
   def self.saveFile(upload, name)
     directory = "public/digital_books"
     # create the file path
@@ -9,7 +11,7 @@ class DataFile < ActiveRecord::Base
 
   def self.search(search)
     if search
-      self.where("name like ? ", "%#{search}%")
+      self.joins(:category).where("data_files.name like ? or categories.name like ? ", "%#{search}%", "%#{search}%")
     else
       self.all
     end
