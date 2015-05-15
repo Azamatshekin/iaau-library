@@ -2,20 +2,21 @@
 
 <h1>Listing Books</h1>
 
-<div class="table-responsive">
+<div class="table-responsive table-striped">
     <table class="table">
       <thead>
         <tr>
           <!-- When submit the form, the view rendered will be the index view of our articles resource -->
-
+          <div class="row">
           <%= form_tag(books_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-              <th colspan="8">
+              <div class="col-md-8">
                     <%= text_field_tag :search, params[:search], class: "form-control input-sm", placeholder: "Search by ( Name, Author, Barcode )" %>
-              </th>
-              <th>
-                <button class="btn btn-success" type="submit">Search<i class="icon-search"></i></button>
-              </th>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-info" type="submit">Search<i class="glyphicon-calendar "></i></button>
+              </div>
           <% end %>
+          </div>
         </tr>
         <tr>
           <th>Category</th>
@@ -28,7 +29,7 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="col-md-12">
         <% @books.each do |book| %>
           <tr>
             <td><%= book.book_type.category.name %></td>
@@ -49,5 +50,5 @@
 </div>
 
 <br>
+<button class="btn  btn-success hover-btn glyphicon-plus"  + <%= link_to 'Add new book', new_book_path %>
 
-<%= link_to 'New Book', new_book_path %>
