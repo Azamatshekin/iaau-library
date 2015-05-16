@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= will_paginate %>
+
 <!-- When submit the form, the view rendered will be the index view of our articles resource -->
 <div class="row">
-  <%= form_tag(books_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+  <%= form_tag(books_lost_books_report_path, :method => "get", class: "navbar-form", id: "search-form") do %>
       <div class="col-md-9">
         <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Name, Author, Barcode )" %>
       </div>
@@ -11,9 +13,6 @@
       </div>
   <% end %>
 </div>
-
-<%= will_paginate %>
-
 <div class="panel panel-default">
 
   <!-- Default panel contents -->
@@ -54,9 +53,6 @@
         </table>
     </div>
 </div>
+
+
 <%= will_paginate %>
-
-<br>
-<%= link_to raw("<span>Add new Book </span>")+image_tag("/images/add.png", width: 18, height: 18), new_book_path, type: "button", class:"btn btn-default"%>
-</div>
-

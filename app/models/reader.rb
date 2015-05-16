@@ -7,6 +7,16 @@ class Reader < ActiveRecord::Base
   validates :user_id, presence: true,
             uniqueness: { case_sensitive: false }
   validate  :picture_size
+
+
+  def self.search(search)
+    if search
+      search = search.to_s.upcase
+      self.joins(:user).where("(upper(name) like ? or upper(surname) like ?) and users.role = 1", "%#{search}%", "%#{search}%")
+    else
+      self.joins(:user).where("users.role = 1")
+    end
+  end
   private
 
     # Validates the size of an uploaded picture.

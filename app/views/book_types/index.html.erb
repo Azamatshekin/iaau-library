@@ -1,6 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 
+<!-- When submit the form, the view rendered will be the index view of our articles resource -->
+<div class="row">
+  <%= form_tag(book_types_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+      <div class="col-md-9">
+        <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Category, Name, Author, Barcode, Publish year )" %>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-default btn-block" type="submit">Search  <%= image_tag("/images/search-icon-hi.png", width: 16, height: 16) %></button>
+      </div>
+  <% end %>
+</div>
+
+
+<%= will_paginate %>
 <div class="panel panel-default">
 
   <!-- Default panel contents -->
@@ -11,20 +25,6 @@
   <div class="table-responsive">
     <table class="table">
       <thead>
-      <tr>
-        <!-- When submit the form, the view rendered will be the index view of our articles resource -->
-        <div class="row">
-          <%= form_tag(book_types_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-              <div class="col-md-8">
-                <%= text_field_tag :search, params[:search], class: "form-control input-sm", placeholder: "Search by ( Name, Author, Publish year )" %>
-              </div>
-              <div class="col-md-4">
-                <button class="btn btn-default" type="submit">Search  <%= image_tag("/images/search-icon-hi.png", width: 16, height: 16) %></button>
-              </div>
-          <% end %>
-        </div>
-      </tr>
-      <tr>
       <tr>
         <th>Category</th>
         <th>Name</th>
@@ -54,6 +54,7 @@
 </div>
 
 <br>
+<%= will_paginate %>
 
   <%= link_to  raw("<span>Add new Book Template </span>")+image_tag("/images/add.png", width: 18, height: 18),
                new_book_type_path, type: "button", class:"btn btn-default" %>
