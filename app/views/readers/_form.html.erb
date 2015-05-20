@@ -9,29 +9,29 @@
       <% end %>
       </ul>
     </div>
-  <% end %>rails s
+  <% end %>
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <select class="form-control input-sm" +<%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :surname %><br>
-    <%= f.text_field :surname %>
+    <select class="form-control input-sm" +<%= f.text_field :surname %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <select class="form-control input-sm" +<%= f.text_field :address %>
   </div>
   <div class="field">
     <%= f.label :passport %><br>
-    <%= f.text_field :passport %>
+    <select class="form-control input-sm" +<%= f.text_field :passport %>
   </div>
 
 
     <div class="field">
       <%= f.label :birth_date %><br>
-      <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', altFormat: 'yyyy-mm-dd' %>
+      <select class="form-control input-sm" +<%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', altFormat: 'yyyy-mm-dd' %>
       <script type="text/javascript">
           $('[data-behaviour~=datepicker]').datepicker();
       </script>
@@ -43,7 +43,7 @@
   </span>
 
   <div class="actions">
-    <%= f.submit 'Save' %>
+    <%= f.submit 'Save', class: "btn btn-default" %>
   </div>
 <% end %>
 
