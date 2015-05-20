@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :show, :new, :edit, :update, :destroy]
   before_action :user_library, only: [:new, :edit, :update, :destroy]
   before_action :user_admin, only: [:lost_books_report]
 

@@ -13,30 +13,30 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <select class="form-control input-sm" +<%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control input-sm" %>
   </div>
   <div class="field">
     <%= f.label :surname %><br>
-    <select class="form-control input-sm" +<%= f.text_field :surname %>
+    <%= f.text_field :surname, class: "form-control input-sm" %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <select class="form-control input-sm" +<%= f.text_field :address %>
+    <%= f.text_field :address, class: "form-control input-sm" %>
   </div>
   <div class="field">
     <%= f.label :passport %><br>
-    <select class="form-control input-sm" +<%= f.text_field :passport %>
+    <%= f.text_field :passport, class: "form-control input-sm" %>
   </div>
 
 
     <div class="field">
       <%= f.label :birth_date %><br>
-      <select class="form-control input-sm" +<%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', altFormat: 'yyyy-mm-dd' %>
+      <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', altFormat: 'yyyy-mm-dd', class: "form-control input-sm" %>
       <script type="text/javascript">
           $('[data-behaviour~=datepicker]').datepicker();
       </script>
     </div>
-    <%= image_tag @reader.photo.url if @reader.photo? %>
+    <%= image_tag @reader.photo.url if @reader.photo?  %>
 
     <span class="picture">
     <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>

@@ -1,19 +1,4 @@
 <html lang="en"><head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <title>Bootply.com - Bootstrap 3 Carousel Layout (BS 3)</title>
-  <meta name="generator" content="Bootply">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
-  <!--[if lt IE 9]>
-          <!--
-  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
-  <![endif]-->
-  <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
-  <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
 
 
 
@@ -61,7 +46,7 @@
         <div class="carousel-caption">
           <h1></h1>
           <p></p>
-          <p><a class="btn btn-large btn-default" href="#">Learn more</a></p>
+          <!--<p><a class="btn btn-large btn-default" href="#">Learn more</a></p>-->
         </div>
       </div>
     </div>
@@ -99,19 +84,19 @@
       <img class="img-circle" src="../images/biograph.jpg"height="140" width="140px">
       <h2></h2>
       <p>What is Lybrary Managment System?</p>
-      <p><a class="btn btn-default" href="#">About Library »</a></p>
+      <p><%= link_to "About Library", home_aboutMe_path,  class: "btn btn-default" %></p>
     </div>
     <div class="col-md-4 text-center">
       <img class="img-circle" src="../images/books_logo3.gif"height="140" width="140px">
       <h2></h2>
       <p>You can search any type of books.</p>
-      <p><a class="btn btn-default" href="#">Search Book »</a></p>
+      <p><%= link_to "Search Book", books_path,  class: "btn btn-default" %></p>
     </div>
     <div class="col-md-4 text-center">
       <img class="img-circle" src="../images/books_logo2.jpg"height="140" width="140px">
       <h2></h2>
       <p>You can download for file books.</p>
-      <p><a class="btn btn-default" href="#">Download PDF »</a></p>
+      <p><%= link_to "Download PDF", upload_upload_download_page_path,  class: "btn btn-default" %></p>
     </div>
   </div><!-- /.row -->
 
