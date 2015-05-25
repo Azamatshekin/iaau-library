@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-    
+
     <div class="field">
       <%= f.label :BookType %><br>
       <select class="form-control input-sm" +<%= f.select :book_type_id, @book_types.map { |book| [book.name, book.id ] } %>
@@ -35,3 +35,4 @@
     <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>
+

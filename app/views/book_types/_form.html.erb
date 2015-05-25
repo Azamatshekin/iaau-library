@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-    <div class="col-md-6">
+
     <div class="field">
       <%= f.label :Category %><br>
       <select class="form-control input-sm" + <%= f.select :category_id, @categories.map { |category| [category.name, category.id ] } %>
@@ -28,6 +28,7 @@
     <%= f.label :publish_year %><br>
     <select class="form-control input-sm" +<%= f.date_select :publish_year %>
 
+
   </div>
   <div class="field">
     <%= f.label :price %><br>
@@ -36,10 +37,8 @@
     <div class="actions">
       <%= f.submit 'save', class: "btn btn-default" %>
     </div>
-</div>
-
 
 <% end %>
 
-<div class="col-md-6">
-</div>
+
+

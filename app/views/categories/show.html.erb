@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="panel panel-default">
+<div class="panel-body">
+  <p>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </p>
+</div>
+</div>
+<%= link_to 'Edit', edit_category_path(@category), :class => "btn btn-default" %> |
+<%= link_to 'Back', categories_path, :class => "btn btn-default" %>
