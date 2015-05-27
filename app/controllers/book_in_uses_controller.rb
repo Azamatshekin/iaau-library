@@ -17,12 +17,16 @@ class BookInUsesController < ApplicationController
 
   def return_book
     id = params[:book_in_use_id]
-    book_in_use1 = BookInUse.find id
-    book_in_use1.returnDate=Time.now
-    if book_in_use1.save
-      message = book_in_use1.book.book_type.name+ " is returned"
+    b = BookInUse.find id
+    b.returnDate=Time.now
+    if b.save
+      message = b.book.book_type.name+ " is returned"
+      flash[:success] = message
+    else
+      message = " Error occured while returning book "
       flash[:success] = message
     end
+    redirect_to book_in_uses_path
   end
 
   def not_returned_report

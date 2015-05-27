@@ -3,7 +3,7 @@
 
 <!-- When submit the form, the view rendered will be the index view of our articles resource -->
 <div class="row">
-  <%= form_tag(book_types_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+  <%= form_tag(book_types_books_report_path, :method => "get", class: "navbar-form", id: "search-form") do %>
       <div class="col-md-9">
         <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Category, Name, Author, Barcode, Publish year )" %>
       </div>
@@ -29,6 +29,7 @@
         <th>Category</th>
         <th>Name</th>
         <th>Author</th>
+        <th>Total</th>
         <th>Publish year</th>
         <th>Price</th>
         <th colspan="3"></th>
@@ -37,16 +38,19 @@
 
       <tbody>
       <% @book_types.each do |book_type| %>
+        <% if book_type.books.length > 0 %>
           <tr>
             <td><%= book_type.category.name %></td>
             <td><%= book_type.name %></td>
             <td><%= book_type.author %></td>
+            <td><%= book_type.books.length %></td>
             <td><%= book_type.publish_year %></td>
             <td><%= book_type.price %></td>
             <td><%= link_to image_tag("/images/info.png", width: 20, height: 20), book_type %></td>
             <td><%= link_to image_tag("/images/modify.png", width: 20, height: 20), edit_book_type_path(book_type) %></td>
             <td><%= link_to image_tag("/images/delete.png", width: 20, height: 20), book_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
+        <% end %>
       <% end %>
       </tbody>
     </table>

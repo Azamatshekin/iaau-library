@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Reader:</strong>
+  <%= @book_in_use.reader.name+' '+@book_in_use.reader.surname %>
+</p>
+<p>
+  <strong>Taken Book</strong>
+  <%= @book_in_use.book.book_type.name %>
+</p>
+<p>
   <strong>Fromdate:</strong>
   <%= @book_in_use.fromDate %>
 </p>

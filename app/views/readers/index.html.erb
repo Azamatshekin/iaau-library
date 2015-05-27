@@ -27,12 +27,12 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th><h4>Name</h4></th>
-                  <th><h4>Surname</h4></th>
-                  <th><h4>Email</h4></th>
-                  <th><h4>Address</h4></th>
-                  <th><h4>Passport</h4></th>
-                  <th><h4>Birth date</h4></th>
+                  <th><h5>Name</h5></th>
+                  <th><h5>Surname</h5></th>
+                  <th><h5>Email</h5></th>
+                  <th><h5>Address</h5></th>
+                  <th><h5>Passport</h5></th>
+                  <th><h5>Birth date</h5></th>
                   <th colspan="3"></th>
                 </tr>
               </thead>
@@ -45,16 +45,16 @@
                           <img class="avatar" + <%= image_tag(reader.photo.url, width: 60, height: 60) if reader.photo? %>
                         </div>
                     </td>
-                    <td><h4><%= reader.name %></h4></td>
-                    <td><h4><%= reader.surname %></h4></td>
+                    <td><h5><%= reader.name %></h5></td>
+                    <td><h5><%= reader.surname %></h5></td>
                     <% if reader.user!=nil %>
-                    <td><h4><%= reader.user.email %></h4></td>
+                    <td><h5><%= reader.user.email %></h5></td>
                     <% else %>
-                        <td><h4><%= reader.email %></h4></td>
+                        <td><h5><%= reader.email %></h5></td>
                     <% end %>
-                    <td><h4><%= reader.address %></h4></td>
-                    <td><h4><%= reader.passport %></h4></td>
-                    <td><h4><%= reader.birth_date %></h4></td>
+                    <td><h5><%= reader.address %></h5></td>
+                    <td><h5><%= reader.passport %></h5></td>
+                    <td><h5><%= reader.birth_date %></h5></td>
                   </tr>
                 <% end %>
               </tbody>

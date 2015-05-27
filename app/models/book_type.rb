@@ -15,14 +15,5 @@ class BookType < ActiveRecord::Base
       self.all
     end
   end
-
-  def self.search_report(search)
-    if search
-      search = search.to_s.upcase
-      self.joins(:category).where("upper(book_types.name) like ? or upper(author) like ? or publish_year like ? or upper(categories.name) like ? or price like ?",
-                                  "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-    else
-      self.all
-    end
-  end
+  
 end

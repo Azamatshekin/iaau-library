@@ -1,5 +1,7 @@
 <h1>New Book In Use</h1>
 
-<div class="col-md-6 center-block" +<%= render 'form' %>
+<div class="col-md-6 center-block">
+  <%= render 'form' %>
+  <%= link_to 'Back', book_in_uses_path, :class => "btn btn-default" %>
+</div>
 
-<%= link_to 'Back', book_in_uses_path, :class => "btn btn-default" %>

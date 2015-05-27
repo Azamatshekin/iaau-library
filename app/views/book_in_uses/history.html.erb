@@ -2,7 +2,7 @@
 
 <!-- When submit the form, the view rendered will be the index view of our articles resource -->
 <div class="row">
-  <%= form_tag(book_in_uses_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+  <%= form_tag(book_in_uses_history_path, :method => "get", class: "navbar-form", id: "search-form") do %>
       <div class="col-md-9">
         <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Reader, Barcode, From date, To date )" %>
       </div>

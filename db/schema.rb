@@ -13,17 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150515122212) do
 
-  create_table "book_by_providers", force: :cascade do |t|
-    t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "provider_id"
-    t.integer  "book_id"
-  end
-
-  add_index "book_by_providers", ["book_id"], name: "index_book_by_providers_on_book_id"
-  add_index "book_by_providers", ["provider_id"], name: "index_book_by_providers_on_provider_id"
-
   create_table "book_in_uses", force: :cascade do |t|
     t.date     "fromDate"
     t.date     "toDate"
@@ -75,17 +64,6 @@ ActiveRecord::Schema.define(version: 20150515122212) do
   end
 
   add_index "data_files", ["category_id"], name: "index_data_files_on_category_id"
-
-  create_table "providers", force: :cascade do |t|
-    t.string   "fullname"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
-  add_index "providers", ["user_id"], name: "index_providers_on_user_id"
 
   create_table "readers", force: :cascade do |t|
     t.string   "name"

@@ -10,7 +10,7 @@ class BookTypesController < ApplicationController
   end
 
   def books_report
-    @book_types = BookType.search_report(params[:search]).paginate(page: params[:page], :per_page => 10)
+    @book_types = BookType.search(params[:search]).paginate(page: params[:page], :per_page => 10)
   end
 
   # GET /book_types/1
