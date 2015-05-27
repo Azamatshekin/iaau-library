@@ -1,7 +1,9 @@
 <h1>Updating Account</h1>
 
-<div class="col-md-6 center-block" + <%= render 'form' %>
+<div class="col-md-6 center-block" >
+  <%= render 'form' %>
+  <%= link_to 'Show', @reader, :class => "btn btn-default" %> |
+  <%= link_to 'Back', readers_path, :class => "btn btn-default" %>
+</div>
 
-<%= link_to 'Show', @reader, :class => "btn btn-default" %> |
-<%= link_to 'Back', readers_path, :class => "btn btn-default" %>
 

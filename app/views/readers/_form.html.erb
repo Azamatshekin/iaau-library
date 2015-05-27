@@ -31,9 +31,9 @@
 
     <div class="field">
       <%= f.label :birth_date %><br>
-      <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', altFormat: 'yyyy-mm-dd', class: "form-control input-sm" %>
+      <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker', class: "form-control input-sm" %>
       <script type="text/javascript">
-          $('[data-behaviour~=datepicker]').datepicker();
+          $('[data-behaviour~=datepicker]').datepicker({format: 'yyyy-mm-dd'});
       </script>
     </div>
     <%= image_tag @reader.photo.url if @reader.photo?  %>

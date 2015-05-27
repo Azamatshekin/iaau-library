@@ -32,6 +32,7 @@ class BookTypesController < ApplicationController
   # POST /book_types
   # POST /book_types.json
   def create
+    @categories = Category.all
     @book_type = BookType.new(book_type_params)
 
     respond_to do |format|
@@ -48,6 +49,7 @@ class BookTypesController < ApplicationController
   # PATCH/PUT /book_types/1
   # PATCH/PUT /book_types/1.json
   def update
+    @categories = Category.all
     respond_to do |format|
       if @book_type.update(book_type_params)
         format.html { redirect_to @book_type, notice: 'Book type was successfully updated.' }

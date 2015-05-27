@@ -43,13 +43,15 @@ class BookInUsesController < ApplicationController
 
   # GET /book_in_uses/1/edit
   def edit
-    @readers = Reader.all
-    @books = Book.all
+    @books = Book.where("books.status_id = 1")
+    @readers = Reader.joins(:user).where("users.role = 1")
   end
 
   # POST /book_in_uses
   # POST /book_in_uses.json
   def create
+    @books = Book.where("books.status_id = 1")
+    @readers = Reader.joins(:user).where("users.role = 1")
     @book_in_use = BookInUse.new(book_in_use_params)
 
     respond_to do |format|
@@ -69,6 +71,8 @@ class BookInUsesController < ApplicationController
   # PATCH/PUT /book_in_uses/1
   # PATCH/PUT /book_in_uses/1.json
   def update
+    @books = Book.where("books.status_id = 1")
+    @readers = Reader.joins(:user).where("users.role = 1")
     respond_to do |format|
       if @book_in_use.update(book_in_use_params)
         format.html { redirect_to @book_in_use, notice: 'Book in use was successfully updated.' }

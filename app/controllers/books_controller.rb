@@ -39,6 +39,8 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    @statuses = Status.all
+    @book_types = BookType.all
     @book = Book.new(book_params)
 
     respond_to do |format|
@@ -55,6 +57,8 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    @statuses = Status.all
+    @book_types = BookType.all
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
@@ -84,6 +88,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:barcode, :INNcode, :book_type_id, :status_id)
+      params.require(:book).permit(:barcode, :shelf_number, :book_type_id, :status_id)
     end
 end

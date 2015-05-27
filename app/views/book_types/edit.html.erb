@@ -1,6 +1,8 @@
 <h1>Editing Book Type</h1>
 
-<div class="col-md-6 center-block" + <%= render 'form' %>
+<div class="col-md-6 center-block">
+  <%= render 'form' %>
+  <%= link_to 'Show', @book_type, :class => "btn btn-default" %> |
+  <%= link_to 'Back', book_types_path, :class => "btn btn-default" %>
+</div>
 
-<%= link_to 'Show', @book_type, :class => "btn btn-default" %> |
-<%= link_to 'Back', book_types_path, :class => "btn btn-default" %>

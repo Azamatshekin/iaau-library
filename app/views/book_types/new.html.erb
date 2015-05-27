@@ -1,5 +1,7 @@
 <h3>New Book Type</h3>
 
-<div class="col-md-6 center-block" + <%= render 'form' %>
+<div class="col-md-6 center-block">
+  <%= render 'form' %>
+  <%= link_to 'Back', book_types_path, :class => "btn btn-default"%>
+</div>
 
-<%= link_to 'Back', book_types_path, :class => "btn btn-default"%>

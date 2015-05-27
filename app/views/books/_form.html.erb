@@ -14,22 +14,22 @@
 
     <div class="field">
       <%= f.label :BookType %><br>
-      <select class="form-control input-sm" +<%= f.select :book_type_id, @book_types.map { |book| [book.name, book.id ] } %>
+      <%= f.select :book_type_id, @book_types.map { |book| [book.name, book.id ] }, {}, {:class => 'form-control input-sm'} %>
     </div>
 
     <div class="field">
       <%= f.label :status %><br>
-      <select class="form-control input-sm" +<%= f.select :status_id, @statuses.map { |status| [status.name, status.id ] } %>
+      <%= f.select :status_id, @statuses.map { |status| [status.name, status.id ] },  {}, {:class => 'form-control input-sm'} %>
     </div>
 
 
   <div class="field">
     <%= f.label :barcode %><br>
-    <select class="form-control input-sm" +<%= f.text_field :barcode %>
+    <%= f.text_field :barcode, class:"form-control input-sm"  %>
   </div>
   <div class="field">
     <%= f.label :shelf_number %><br>
-    <select class="form-control input-sm" +<%= f.text_field :shelf_number %>
+    <%= f.text_field :shelf_number, class:"form-control input-sm" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-default" %>
