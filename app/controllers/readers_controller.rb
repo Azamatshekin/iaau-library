@@ -18,6 +18,12 @@ class ReadersController < ApplicationController
     @book_in_uses= current_user.reader.book_in_uses
   end
 
+  def show_books_by_reader
+    id = params[:reader_id]
+    @reader1 = Reader.find id
+    @book_in_uses= @reader1.book_in_uses
+  end
+
 
   # GET /readers/new
   def new
@@ -79,7 +85,7 @@ class ReadersController < ApplicationController
       unless current_user.reader.id==@reader.id
         store_location
         flash[:danger] = "You cannot open other profiles."
-        redirect_to 'current path :))'
+        redirect_to access_denied_path
       end
     end
 

@@ -55,6 +55,10 @@
                     <td><h5><%= reader.address %></h5></td>
                     <td><h5><%= reader.passport %></h5></td>
                     <td><h5><%= reader.birth_date %></h5></td>
+
+                    <% if current_user.admin? or current_user.role == librarian_role %>
+                        <td> <%= link_to 'Show taken books',  show_books_by_reader_path(:reader_id => reader.id), type:"button", class: "btn btn-default"  %></td>
+                    <% end %>
                   </tr>
                 <% end %>
               </tbody>

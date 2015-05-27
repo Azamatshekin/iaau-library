@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "book_in_uses/return_book/:book_in_use_id", :controller => "book_in_uses", :action => "return_book", as: 'return_book'
 
+  get "readers/show_books_by_reader/:reader_id", :controller => "readers", :action => "show_books_by_reader", as: 'show_books_by_reader'
+
   get 'book_types/books_report'
 
   get 'public/AccessDenied'

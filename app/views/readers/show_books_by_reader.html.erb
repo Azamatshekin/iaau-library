@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing all Books Taken by you</h1>
+<% if  @book_in_use == nil or @book_in_use.length == 0 %>
+    <h3><%= @reader1.name + ' ' + @reader1.surname %> is did not take any book from Library </h3>
+<% else %>
+    <h3>Listing all Books Taken by <%= @reader1.name + ' ' + @reader1.surname %> </h3>
+<% end %>
 <div class="table-responsive">
   <table class="table">
     <thead>
