@@ -1,5 +1,6 @@
 class DataFile < ActiveRecord::Base
   belongs_to :category
+  validates :category_id, presence: true
 
   def self.saveFile(upload, name)
     directory = "public/digital_books"

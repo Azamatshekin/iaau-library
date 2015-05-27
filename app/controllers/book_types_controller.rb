@@ -1,11 +1,16 @@
 class BookTypesController < ApplicationController
   before_action :set_book_type, only: [:show, :edit, :update, :destroy]
-  before_action :user_library, only: [:new, :edit, :update, :destroy]
+  before_action :user_library, only: [:new, :edit, :show, :create, :update, :destroy, :index]
+  before_action :user_admin, only: [:books_report]
 
   # GET /book_types
   # GET /book_types.json
   def index
     @book_types = BookType.search(params[:search]).paginate(page: params[:page], :per_page => 10)
+  end
+
+  def books_report
+    @book_types = BookType.search_report(params[:search]).paginate(page: params[:page], :per_page => 10)
   end
 
   # GET /book_types/1

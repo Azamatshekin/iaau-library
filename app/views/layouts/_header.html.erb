@@ -41,8 +41,10 @@
                       Reports <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+                      <li><%= link_to "Books Report", book_types_books_report_path %></li>
                       <li><%= link_to "Lost Books Report", books_lost_books_report_path %></li>
                       <li><%= link_to "Readers who don't returned books on time", book_in_uses_not_returned_report_path %></li>
+                      <li><%= link_to "History of taken books", book_in_uses_history_path %></li>
                       <!--<li><%= link_to "Add new Book", new_book_path %></li>-->
 
                       <li class="divider"></li>

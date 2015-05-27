@@ -41,4 +41,18 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+  def user_admin_or_library
+    if logged_in?
+      if current_user.admin? or current_user.role==librarian_role
+      else
+        store_location
+        flash[:danger] = "You are not Librarian, Access denied!"
+        redirect_to access_denied_url
+      end
+    else
+      store_location
+      flash[:danger] = "You are unAuthorized Please log in."
+      redirect_to login_url
+    end
+  end
 end

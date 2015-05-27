@@ -1,7 +1,7 @@
 <%= form_for(@book_type) do |f| %>
   <% if @book_type.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@book_type.errors.count, "error") %> prohibited this book_type from being saved:</h2>
+      <h2><%= pluralize(@book_type.errors.count, "error") %> prohibited this book template from being saved:</h2>
 
       <ul>
       <% @book_type.errors.full_messages.each do |message| %>

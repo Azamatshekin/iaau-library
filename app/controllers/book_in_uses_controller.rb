@@ -1,7 +1,8 @@
 class BookInUsesController < ApplicationController
   before_action :set_book_in_use, only: [:show, :edit, :update, :destroy]
-  before_action :user_library, only: [:new, :edit, :update, :destroy]
+  before_action :user_library, only: [:new, :create, :return_book]
   before_action :user_admin, only: [:not_returned_report]
+  before_action :user_admin_or_library, only: [:show, :edit, :update, :destroy, :history, :index]
 
   # GET /book_in_uses
   # GET /book_in_uses.json
@@ -9,6 +10,20 @@ class BookInUsesController < ApplicationController
     @book_in_uses = BookInUse.search(params[:search]).paginate(page: params[:page])
   end
 
+  def history
+    @book_in_uses = BookInUse.searchAll(params[:search]).paginate(page: params[:page])
+  end
+
+
+  def return_book
+    id = params[:book_in_use_id]
+    book_in_use1 = BookInUse.find id
+    book_in_use1.returnDate=Time.now
+    if book_in_use1.save
+      message = book_in_use1.book.book_type.name+ " is returned"
+      flash[:success] = message
+    end
+  end
 
   def not_returned_report
     @book_in_uses = BookInUse.search_not_returned(params[:search]).paginate(page: params[:page], :per_page => 10)
