@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   get "deleteDOC/:filename", :controller => "upload", :action => "deleteDOC", as: 'delete_doc'
 
+  get 'book_in_uses/history'
+
+  get "return_book/:book_in_use_id", :controller => "book_in_uses", :action => "return_book", as: 'return_book'
+
+  get 'book_types/books_report'
+
   get 'public/AccessDenied'
 
   get 'public/Unauthorized'
