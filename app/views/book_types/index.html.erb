@@ -41,7 +41,7 @@
             <td><%= book_type.category.name %></td>
             <td><%= book_type.name %></td>
             <td><%= book_type.author %></td>
-            <td><%= book_type.publish_year %></td>
+            <td><%= book_type.publish_year.strftime("%Y") %></td>
             <td><%= book_type.price %></td>
             <td><%= link_to image_tag("/images/info.png", width: 20, height: 20), book_type %></td>
             <td><%= link_to image_tag("/images/modify.png", width: 20, height: 20), edit_book_type_path(book_type) %></td>

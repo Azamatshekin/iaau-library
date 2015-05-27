@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :publish_year %><br>
-    <%= f.date_select :publish_year %>
+    <select class="form-control input-sm" + <%= f.date_select :publish_year,  { :discard_day => true, :discard_month=>true} %>
 
 
   </div>
