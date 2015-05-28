@@ -13,7 +13,7 @@ class BookInUse < ActiveRecord::Base
       self.joins(:book, :reader).where(" returnDate=? and ( upper(readers.name) like ? or upper(readers.surname) like ? or upper(books.barcode) like ? or fromDate like ? or toDate like ? )",
                                        nil, "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
-      self.where(" returnDate=? ", nil)
+      self.joins(:book, :reader).where(" returnDate=? ", nil)
     end
   end
 
@@ -32,7 +32,7 @@ class BookInUse < ActiveRecord::Base
       self.joins(:book, :reader).where("(upper(readers.name) like ? or upper(readers.surname) like ? or upper(books.barcode) like ? or fromDate like ?) and toDate < ? and returnDate=?",
                                        "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", Time.now, nil)
     else
-      self.where("toDate < ? and returnDate=?", Time.now, nil)
+      self.joins(:book, :reader).where("toDate < ? and returnDate=?", Time.now, nil)
     end
   end
 end

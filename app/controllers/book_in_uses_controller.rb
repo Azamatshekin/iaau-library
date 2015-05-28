@@ -7,11 +7,11 @@ class BookInUsesController < ApplicationController
   # GET /book_in_uses
   # GET /book_in_uses.json
   def index
-    @book_in_uses = BookInUse.search(params[:search]).paginate(page: params[:page])
+    @book_in_uses = BookInUse.search(params[:search]).paginate(page: params[:page], :per_page => 8)
   end
 
   def history
-    @book_in_uses = BookInUse.searchAll(params[:search]).paginate(page: params[:page])
+    @book_in_uses = BookInUse.searchAll(params[:search]).paginate(page: params[:page], :per_page => 8)
   end
 
 

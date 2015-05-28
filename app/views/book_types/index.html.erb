@@ -56,8 +56,9 @@
 <br>
 <%= will_paginate %>
 
+<% if current_user.role!=reader_role %>
   <%= link_to  raw("<span>Add new Book Template </span>")+image_tag("/images/add.png", width: 18, height: 18),
                new_book_type_path, type: "button", class:"btn btn-default" %>
-
+<% end %>
 
 
