@@ -13,7 +13,7 @@ class BookInUse < ActiveRecord::Base
       self.joins(:book, :reader).where(" returnDate is ? and ( upper(readers.name) like ? or upper(readers.surname) like ? or upper(books.barcode) like ? or fromDate like ? or toDate like ? )",
                                        nil, "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
-      self.joins(:book, :reader).where(" returnDate is ? ", nil)
+      self.joins(:book, :reader).where(" returnDate IS ? ", nil)
     end
   end
 
