@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="col-md-6 center-block" >
+  <div class="panel panel-default">
+    <div class="panel-body">
 <p>
   <strong>Reader:</strong>
   <%= @book_in_use.reader.name+' '+@book_in_use.reader.surname %>
@@ -22,6 +24,8 @@
   <strong>Returndate:</strong>
   <%= @book_in_use.returnDate %>
 </p>
-
+      </div>
+</div>
 <%= link_to 'Edit', edit_book_in_use_path(@book_in_use), :class => "btn btn-default" %> |
 <%= link_to 'Back', book_in_uses_path, :class => "btn btn-default" %>
+</div>

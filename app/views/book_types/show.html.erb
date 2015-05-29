@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="col-md-6 center-block" >
+  <div class="panel panel-default">
+    <div class="panel-body">
 <p>
   <strong>Category:</strong>
   <%= @book_type.category.name %>
@@ -24,6 +26,8 @@
   <strong>Price:</strong>
   <%= @book_type.price %>
 </p>
-
+</div>
+    </div>
 <%= link_to 'Edit', edit_book_type_path(@book_type), :class => "btn btn-default" %> |
 <%= link_to 'Back', book_types_path, :class => "btn btn-default" %>
+</div>

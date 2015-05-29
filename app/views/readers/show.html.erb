@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<div class="col-md-6 center-block" >
+  <div class="panel panel-default" >
+    <div class="panel-body">
 
 <p>
   <strong>Name:</strong>
@@ -30,8 +33,14 @@
   <%= @reader.birth_date %>
 </p>
 
-<%= image_tag @reader.photo.url if @reader.photo? %>
+      <%= image_tag @reader.photo.url if @reader.photo? %>
+
+    </div>
+    </div>
+
+
 
 
 <%= link_to 'Edit', edit_reader_path(@reader), :class => "btn btn-default" %> |
 <%= link_to 'Back', readers_path, :class => "btn btn-default" %>
+</div>

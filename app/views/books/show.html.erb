@@ -1,14 +1,35 @@
 <p id="notice"><%= notice %></p>
+<div class="col-md-6 center-block" >
+<div class="panel panel-default" >
+  <div class="panel-body">
 
-<p>
-  <strong>Barcode:</strong>
-  <%= @book.barcode %>
-</p>
+    <p>
+      <strong>category:</strong>
+      <%= @book.book_type.category.name %>
+    </p>
 
-<p>
+    <p>
+      <strong>name:</strong>
+      <%= @book.book_type.name %>
+    </p>
+
+    <p>
+      <strong>author:</strong>
+      <%= @book.book_type.author %>
+    </p>
+
+    <p>
+      <strong>Barcode:</strong>
+      <%= @book.barcode %>
+    </p>
+
+    <p>
   <strong>Shelf number:</strong>
   <%= @book.shelf_number %>
 </p>
+</div>
+  </div>
+  <%= link_to 'Edit', edit_book_path(@book), :class => "btn btn-default"   %>
+  <%= link_to 'Back', books_path, :class => "btn btn-default"  %>
 
-<%= link_to 'Edit', edit_book_path(@book), :class => "btn btn-default"   %>
-<%= link_to 'Back', books_path, :class => "btn btn-default"  %>
+</div>
