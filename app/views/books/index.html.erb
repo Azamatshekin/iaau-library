@@ -4,7 +4,7 @@
 <div class="row">
   <%= form_tag(books_path, :method => "get", class: "navbar-form", id: "search-form") do %>
       <div class="col-md-9">
-        <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Name, Author, Barcode )" %>
+        <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Name, Author, Barcode, status )" %>
       </div>
       <div class="col-md-3">
         <button class="btn btn-default btn-block" type="submit">Search  <%= image_tag("/images/search-icon-hi.png", width: 16, height: 16) %></button>

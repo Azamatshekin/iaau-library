@@ -20,8 +20,15 @@ class BookInUsesController < ApplicationController
     b = BookInUse.find id
     b.returnDate=Time.now
     if b.save
-      message = b.book.book_type.name+ " is returned"
-      flash[:success] = message
+      book = Book.find b.book.id
+      book.status_id=1
+      if book.save
+        message = b.book.book_type.name+ " is returned"
+        flash[:success] = message
+      else
+        message = " Error occured while returning book "
+        flash[:success] = message
+      end
     else
       message = " Error occured while returning book "
       flash[:success] = message

@@ -27,8 +27,11 @@
             <tr>
               <th>Reader</th>
               <th>Book</th>
+              <th>Barcode</th>
               <th>Fromdate</th>
               <th>Todate</th>
+              <th> </th>
+              <th>Status</th>
               <th colspan="3"></th>
             </tr>
             </thead>
@@ -38,10 +41,16 @@
                 <tr>
                   <td><%= book_in_use.reader.name + " "+ book_in_use.reader.surname %></td>
                   <td><%= book_in_use.book.book_type.name %></td>
+                  <td><%= book_in_use.book.barcode %></td>
                   <td><%= book_in_use.fromDate %></td>
                   <td><%= book_in_use.toDate %></td>
                   <td> <%= link_to 'Return Book',  return_book_path(:book_in_use_id => book_in_use.id), type:"button", class: "btn btn-default"  %></td>
-                 </tr>
+                  <% if book_in_use.toDate > Time.now %>
+                    <td><span class="label label-success" >OK</span></td>
+                  <% else %>
+                      <td><span class="label label-danger" >Passed</span></td>
+                  <% end %>
+                </tr>
             <% end %>
             </tbody>
         </table>

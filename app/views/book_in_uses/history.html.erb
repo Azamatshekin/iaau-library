@@ -2,7 +2,7 @@
 
 <!-- When submit the form, the view rendered will be the index view of our articles resource -->
 <div class="row">
-  <%= form_tag(book_in_uses_history_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+  <%= form_tag(book_in_uses_path, :method => "get", class: "navbar-form", id: "search-form") do %>
       <div class="col-md-9">
         <%= text_field_tag :search, params[:search], :size => 100, class: "form-control input", placeholder: "Search by ( Reader, Barcode, From date, To date )" %>
       </div>
@@ -27,6 +27,7 @@
             <tr>
               <th>Reader</th>
               <th>Book</th>
+              <th>Barcode</th>
               <th>From Date</th>
               <th>To Date</th>
               <th>Return Date</th>
@@ -39,6 +40,7 @@
                 <tr>
                   <td><%= book_in_use.reader.name + " "+ book_in_use.reader.surname %></td>
                   <td><%= book_in_use.book.book_type.name %></td>
+                  <td><%= book_in_use.book.barcode %></td>
                   <td><%= book_in_use.fromDate %></td>
                   <td><%= book_in_use.toDate %></td>
                   <td><%= book_in_use.returnDate %></td>

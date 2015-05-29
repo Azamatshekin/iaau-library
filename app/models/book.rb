@@ -10,8 +10,8 @@ class Book < ActiveRecord::Base
   def self.search(search)
     if search
       search = search.to_s.upcase
-      self.joins(:book_type).where("upper(barcode) like ? or upper(book_types.name) like ? or upper(book_types.author) like ? ",
-                                   "%#{search}%", "%#{search}%", "%#{search}%")
+      self.joins(:book_type, :status).where("upper(barcode) like ? or upper(book_types.name) like ? or upper(book_types.author) like ? or upper(statuses.name) like ? ",
+                                   "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
       self.all
     end
